@@ -20,7 +20,7 @@ public class JavaStreams {
                 .collect(Collectors.toList());
 
         //~~~~~ Output for Activity 1 ~~~~~
-        System.out.println("Activity 1");
+        System.out.println("-- Activity 1 --");
         System.out.printf("Initial list: %s\n", list1);
         System.out.printf("List of all Odds: %s\n", allOdds);
 
@@ -36,9 +36,30 @@ public class JavaStreams {
                 .toList();
 
         //~~~~~ Output for Activity 2 ~~~~~
-        System.out.println("\nActivity 2");
+        System.out.println("\n-- Activity 2 --");
         System.out.printf("Initial name list: %s\n", names);
         System.out.printf("List of names start with 'A': %s\n", listStartsWithA);
+
+        // ============================
+
+        // ~~~~~ Activity 3 ~~~~~
+        List<Integer> list2 = Arrays.asList(1, 2, 3, 4, 5);
+
+        List<Integer> squareOfNumbers = list2.stream()
+                .map(num -> num * num)
+                .toList();
+
+        //~~~~~ Output for Activity 3 ~~~~~
+        System.out.println("\n-- Activity 3--");
+        System.out.printf("List before square up: %s\n", list2);
+        System.out.printf("List after square: %s\n", squareOfNumbers);
+
+        // ============================
+
+        // ~~~~~ Activity 4 ~~~~~
+        
+
+
 
 
     }
