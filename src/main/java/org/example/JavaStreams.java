@@ -57,10 +57,25 @@ public class JavaStreams {
         // ============================
 
         // ~~~~~ Activity 4 ~~~~~
+        List<Integer> list3 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        Predicate<Integer> numIsEven = n -> n % 2 == 0;
+        Predicate<Integer> isGreaterThanFive = n -> n > 5;
+
+        //  defined List with Integer types that stores all even numbers that's more than 5 using filter with .and()
+        List<Integer> evenAndMoreThanFive = list3.stream()
+                .filter(numIsEven.and(isGreaterThanFive))
+                .collect(Collectors.toList());
+
+        //~~~~~ Output for Activity 1 ~~~~~
+        System.out.println("\n-- Activity 4 --");
+        System.out.printf("Initial list: %s\n", list3);
+        System.out.printf("Even and >5: %s\n", evenAndMoreThanFive);
+
+        // ============================
+
+        // ~~~~~ Activity 5 ~~~~~
         
-
-
-
 
     }
 }
