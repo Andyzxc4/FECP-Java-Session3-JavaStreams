@@ -2,6 +2,7 @@ package org.example;
 
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -75,7 +76,31 @@ public class JavaStreams {
         // ============================
 
         // ~~~~~ Activity 5 ~~~~~
-        
+
+        //  list of people's object
+        List<Person> personList = Arrays.asList(
+                new Person("Andre", 22),
+                new Person("Drew", 32),
+                new Person("John", 9),
+                new Person("Jake", 53),
+                new Person("Luke", 21)
+        );
+
+        //  sort by age (ascending order)
+        System.out.println("\n-- Activity 5 --");
+        List<Person> sortedByAgeAscending = personList.stream().sorted(Comparator.comparingInt(Person::getAge)).toList();
+        System.out.println("Sorted by age (ascending)");
+        sortedByAgeAscending.forEach(System.out::println);
+
+        //  sorted by name
+        List<Person> sortedByName = personList.stream().sorted(Comparator.comparing(Person::getName)).toList();
+        System.out.println("\nSorted by name");
+        sortedByName.forEach(System.out::println);
+
+        //  sorted by age (descending)
+        List<Person> sortedByAgeDescending = personList.stream().sorted(Comparator.comparingInt(Person::getAge).reversed()).toList();
+        System.out.println("\nSorted by age (descending)");
+        sortedByAgeDescending.forEach(System.out::println);
 
     }
 }
